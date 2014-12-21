@@ -1,0 +1,485 @@
+/*Questions:*/
+
+/*How do I use z-index? E.g. on the logo or other elements I'd like to keep front*/
+/*What is the margin 8px that is applied by the user-agent stylesheet,and how do I overcome it to achieve a seamless look?*/
+/*On #nav-community, what's the significance of spacing with margin versus padding?*/
+
+
+/* Body-Wide */
+
+
+body{
+	font-family: 'Josefin Sans', sans-serif;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	display: inline-block;
+}
+body *{
+	box-sizing: inherit;
+	/*border: 1px solid black;
+	min-height: 50px;*/
+}
+
+/* Header */
+
+
+nav ul{
+	list-style-type: none;
+}
+nav ul li{
+	display: inline;
+}
+nav ul a{
+	color: white;
+	text-decoration: none;
+	margin-right: 2%;
+	-webkit-transition: all 0.3s;
+}
+nav ul a:hover{
+	color: grey;
+	/*text-decoration: underline;*/
+	border-bottom: 1px;
+}
+.logo-container{
+	position: relative;
+	width: 6em;
+	height: 50px;
+	text-align: center;
+	float: left;
+}
+.logo{
+	font-family: 'Kaushan Script', cursive;
+	font-size: 2.5em;
+	color: white;
+	text-decoration: none;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	height: 30px; 
+	width: 100px;
+	margin: -15px 0 0 -50px;
+}
+.header-nav{
+	position: fixed;
+	height: 50px;
+	background-color: rgba(0, 0, 0, .6);
+}
+.nav-menu-list{
+	float: right;
+}
+#nav-community{
+	margin-right: 25%;
+}
+.hamburger{
+	cursor: pointer;
+	margin-right: 10px;
+	margin-top: 5px;
+	display: none;
+	float: right;
+	/*clear: both;*/
+}
+.hamburger div{
+	position: absolute;
+	left: 100%;
+	top: 64%;
+	padding-right: 8px;
+	margin-top: -0.50em;
+	line-height: 1.2;
+	font-size: 1.125em;
+	font-weight: 200;
+	vertical-align: middle;
+	z-index: 99;
+}
+.hamburger span{
+	display: block;
+	width: 30px;
+	height: 5px;
+	margin: 6px 0;
+	background: white;
+	z-index: 99;
+}
+.mobilemenu{
+	width:100%;
+	text-align: center;
+	display: none;	
+	float: right;
+}
+.mobilemenuitem{
+	position: relative;
+	top: 0px;
+	font-size: 1.5em;
+	height: 2em;
+	line-height: 2em;
+	background-color: rgba(0, 0, 0, .6);
+	border: 1px solid grey;
+	display: block;
+	text-decoration: none;
+	color: white;
+}
+
+.show{
+	display: block;
+}
+
+/* Index Main */
+
+
+.background{
+	background-image: url("../images/harbisonrawonracks.jpg");
+	/*background-attachment: fixed;*/
+	background-size: cover;
+	background-position: left top;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+/*.autumn-brit-background{}
+.autumn-bayley-background{}
+.winter-vach-background{}*/
+
+
+h1, h2{
+	/*font-family: 'Walter Turncoat', cursive;*/
+	text-align: center;
+	color: white;
+}
+h1{
+	padding-top: 10px;
+	margin-top: 0px; /*override normalize*/
+}
+.block{
+	padding-bottom: 100px;
+}
+.intro{
+	padding-top: 100px;
+}
+.intro p{
+	color: white;
+	float: none;
+	clear: both;
+}
+.intro-expanded{
+	padding-top: 350px;
+}
+.article{
+	margin: 0 8.333333% 0 8.333333%;
+}
+.article *{
+	color: black;
+}
+.image{
+	padding: 20px;
+}
+.image-left{
+	float: left;
+}
+.image-right{
+	float: right;
+}
+.content{
+	margin: 0 8.333333% 0 8.333333%;
+}
+.intro-content{
+	margin-left: 5%;
+	/*margin-top: 100px;*/
+	width: 90%;
+	background-color: rgba(0, 0, 0, .6);
+	padding-bottom: 100px;
+}
+/*.hideContent{
+	overflow: hidden;
+	line-height: 1.5em;
+	height: 24em;
+}
+.showContent{
+	line-height: 1.5em;
+	height: auto;
+a.arrows{
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: all 0.3s;
+}*/
+a.arrows:hover{
+	color: grey;
+}
+.arrows{
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	height: 2em;
+	width: 2em;
+	color: white;
+	text-decoration: none;
+	-webkit-transition: all 0.3s;
+}
+.arrow-position{
+	position: fixed;
+	top: 50%;
+	-webkit-transition: all 1s;
+}
+.arrow-expanded{
+	top: 60%;
+}
+#arrowleft::before, #arrowright::before{
+	/*-webkit-transform-origin: 50% 50%;*/
+	content: "";
+	position: relative;
+	top: 0;
+	display: block;
+	width: .5em;
+	height: .5em;
+	border-bottom: solid .5em rgba(255, 255, 255, .4);
+	border-left: solid .5em rgba(255, 255, 255, .4);
+	padding: 10px;
+}
+
+/*?? Can I give a pseudo-class to a pseudo-element?*/
+/*.arrows::before:hover{
+	color: white;
+}*/
+
+#arrowleft{
+	left: 0;
+	float: left;
+}
+#arrowleft::before{
+	-webkit-transform: rotate(45deg);
+	left: 10px;
+}
+#arrowright{
+	right: 0;
+	float: right;
+}
+#arrowright::before{
+	-webkit-transform: rotate(225deg);
+	right: 16px;
+}
+#arrowreadmore::after{
+	/*-webkit-transform-origin: 50% 50%;*/
+	content: "";
+	position: relative;
+	top: 0;
+	display: block;
+	width: .5em;
+	height: .5em;
+	border-bottom: solid .5em rgba(255, 255, 255, .4);
+	border-left: solid .5em rgba(255, 255, 255, .4);
+	padding: 10px;
+	-webkit-transform: rotate(-45deg);
+}
+#arrowreadmore, #arrowreadless{
+	margin-top: -100px;
+	position: absolute;
+	left: 50%;
+	right: 50%;
+}
+#arrowreadless{
+	color: black;
+	display: none;
+}
+#arrowreadless::before{
+	content: "";
+	position: relative;
+	top: 0;
+	display: block;
+	width: .5em;
+	height: .5em;
+	border-bottom: solid .5em rgba(0, 0, 0, .4);
+	border-left: solid .5em rgba(0, 0, 0, .4);
+	padding: 10px;
+	-webkit-transform: rotate(135deg);
+}
+#introblock{
+	background-color: black;
+	-webkit-transition: all 1s;
+}
+#fulltextblock{
+	display: none;
+	/*-webkit-transition: all 2s;*/
+	/*?? Why this not working?*/
+	/*?? Is JS show/hide w/speed the better way?*/
+}
+ 
+
+/*Within content*/
+
+.content p::first-letter{
+	color: grey;
+	font-size: 2em;
+}
+
+
+/* All Seasons Main */
+
+
+.seasonblock{
+
+}
+.backgroundfall{
+
+}
+.backgroundsummer{
+
+}
+.backgroundspring{
+
+}
+.backgroundwinter{
+
+}
+
+
+/* Footer */
+
+
+footer{
+	/*height: 100px;*/
+	background-color: rgba(0, 0, 0, .8);
+	text-align: center;
+	clear: both;
+}
+footer p{
+	font-size: .8em;
+	padding: 25px;
+}
+footer ul{
+	list-style-type: none;
+	margin-left: 5%;
+	margin-top: 0px;
+	/*why this?*/
+	padding: 25px;
+}
+footer ul li{
+	display: inline;
+}
+footer ul a{
+	color: white;
+	text-decoration: none;
+	-webkit-transition: all 0.3s;
+}
+.twitter1::before, .pinterest1::before, .instagram1::before, .facebook1::before{
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+    font-size: 18px;
+    padding-right: 2em;
+    /*position: absolute;
+    top: 10px;
+    left: 0;*/
+}
+.twitter1::before{
+	content: "\f099";
+}
+.pinterest1::before{
+	content: "\f0d2";
+}
+.instagram1::before{
+	content: "\f16d";
+}
+.facebook1::before{
+	content: "\f09a";
+}
+
+
+
+/* Grid and Document-wide */
+
+
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.grid-1{
+	width:8.3333333%;
+}
+.grid-2{
+	width:16.66666667%;
+}
+.grid-3{
+	width:25%;
+}
+.grid-4{
+	width:33.3333333333%;
+}
+.grid-5{
+	width:41.66666667%;
+}
+.grid-6{
+	width:50%;
+}
+.grid-7{
+	width:58.3333333333%;
+}
+.grid-8{
+	width:66.66666666667%;
+}
+.grid-9{
+	width: 75%;
+}
+.grid-10{
+	width: 83.33333333333%;
+}
+.grid-11{
+	width: 91.666667%;
+}
+.grid-12{
+	width: 100%;
+}
+.push-1{
+	margin-left: 8.3333%;
+}
+.push-2{
+	margin-left: 16.6666666667%;
+}
+.push-3{
+	margin-left: 33.3333333333%;
+}
+
+
+/* Media Queries */
+
+
+@media (max-width:1232px){
+	nav ul li a{
+		margin-right: 1.5%;
+	}
+	#nav-community{
+		margin-right: 20%;
+	}
+}
+@media (max-width:1037px){
+	nav ul li a{
+		margin-right: 1%;
+	}
+	#nav-community{
+		margin-right: 10%;
+	}
+}
+@media (max-width:877px){
+	#nav-about{
+		display: none;
+	}
+}
+@media (max-width:768px){
+	.hamburger{
+		display: block;
+	}
+	.nav-menu-list{
+		display: none;
+	}
+	.image{
+		float: none;
+	}
+}
+
+
+/*Hide "#nav-thisseason", put second menu below first menu*/
+
+
+@media (max-width:479px){}
