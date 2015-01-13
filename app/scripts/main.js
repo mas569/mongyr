@@ -34,7 +34,7 @@ $(window).scroll(function(){
 
 var windowHeightPix = $(window).height();
 function mouseNav(){
-	$(document).mousemove(function(event){
+	$(document).mousemove(function(){
 		$("#status").html(event.clientX +', '+ event.clientY);
 		var mouseYAsPercent =  (100 * event.clientY) / windowHeightPix;
 		console.log("mouse Y pos = " + event.clientY);
@@ -46,7 +46,7 @@ function mouseNav(){
 			$(".header-nav").removeClass("fadeOutUp");
 			$(".header-nav").addClass("fadeInDown");
 			console.log("mouseNavDown is working!");
-		} else if ($(window).scrollTop() > 50){
+		} else if ($(window).scrollTop() > 49){
 			$(".header-nav").mouseleave(function(){
 				$(".header-nav").removeClass("fadeInDown");
 				$(".header-nav").addClass("fadeOutUp");	
